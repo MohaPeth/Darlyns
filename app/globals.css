@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 57% 1%;
+    --foreground: 39 19% 100%;
+    --muted: 39 18% 15%;
+    --muted-foreground: 39 14% 72%;
+    --popover: 39 57% 1%;
+    --popover-foreground: 39 19% 100%;
+    --card:  37.25% 32.55%  24.71%;
+    --card-foreground: 0 0% 100%;
+    --border: 39 15% 15%;
+    --input: 39 15% 15%;
+    --primary: 39 44% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 39 7% 16%;
+    --secondary-foreground: 39 7% 76%;
+    --accent: 39 13% 25%;
+    --accent-foreground: 39 13% 85%;
+    --destructive: 13 89% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 39 44% 42%;
+    
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* SlideBar */
+/* Exemple de CSS personnalisé pour la couleur des points de pagination */
+.swiper-pagination-below .swiper-pagination-bullet {
+  margin-top: 2;
+  background-color: #d9ba85; /* Couleur spécifique que vous souhaitez */
+  width: 8px; /* Largeur souhaitée */
+  height: 8px; /* Hauteur souhaitée */
+  margin: 0 2px; /* Marge autour des points */
+  border-radius: 50%; /* Pour les rendre ronds */
+}
+
+
+.swiper-pagination-bullet-active {
+  width: 12px; /* Largeur du point actif */
+  height: 12px; /* Hauteur du point actif */
+  background-color: #d9ba85; /* Couleur du point actif */
+}
+
+.bg-section {
+  background-color: #4a3e2b; /* Couleur de fond personnalisée */
+}
+
+.gallery {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style pour le BG Events */
+/* .events {
+  position: relative;
+  overflow: hidden;
+}
+
+.events::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* dégradé noir avec opacité augmentée */
+  /*z-index: 1; 
+}
+
+.events-bg {
+  background-image: url('/img/events-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+/* fin EVENT*/
+
+.box {
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.box.bg-primary .text-4xl {
+  color: white; /* Change la couleur du texte à blanc lorsque la carte a la classe bg-primary */
+}
+
