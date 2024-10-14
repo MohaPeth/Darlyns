@@ -8,7 +8,7 @@ const Header = () => {
       <Section>
         <div className="container mx-auto flex flex-row justify-between items-center font-sans">
           <h1 className="text-3xl  ">
-            <Link href="/">&apos;THE DARLYN&apos;S&apos;</Link>
+            <Link href="/">THE DARLYN&apos;S</Link>
           </h1>
           <nav id="navbar" className="flex-grow">
             <ul className="flex space-x-4 justify-center">
