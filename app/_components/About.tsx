@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -11,9 +12,11 @@ const About = () => {
             data-aos-delay="100"
           >
             <div className="about-img overflow-hidden border-4 border-primary">
-              <img
-                src="img/about.jpg"
+              <Image
+                src="/img/about.jpg"
                 alt="About Us"
+                width={500}
+                height={300}
                 className="w-full rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
             </div>

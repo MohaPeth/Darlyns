@@ -6,6 +6,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { RightIcon } from "./icons/RightIcon";
+import Image from "next/image";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -17,7 +18,7 @@ const eventsData = [
     id: 1,
     title: "Birthday Parties",
     price: "$189",
-    imgSrc: "img/event-birthday.jpg",
+    imgSrc: "/img/event-birthday.jpg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     details:
@@ -32,7 +33,7 @@ const eventsData = [
     id: 2,
     title: "Private Parties",
     price: "$290",
-    imgSrc: "img/event-private.jpg",
+    imgSrc: "/img/event-private.jpg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     details:
@@ -47,7 +48,7 @@ const eventsData = [
     id: 3,
     title: "Custom Parties",
     price: "$99",
-    imgSrc: "img/event-custom.jpg",
+    imgSrc: "/img/event-custom.jpg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     details:
@@ -92,10 +93,12 @@ const Events = () => {
             <SwiperSlide key={event.id}>
               <div className="flex flex-col lg:flex-row items-center">
                 <div className="w-full lg:w-1/2">
-                  <img
+                  <Image
                     src={event.imgSrc}
                     className="img-fluid rounded-lg shadow-lg mb-8"
                     alt={event.title}
+                    width={500}
+                    height={300}
                   />
                 </div>
                 <div className="w-full lg:w-1/2 lg:pl-8 pt-4 pt-lg-0">

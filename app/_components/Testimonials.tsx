@@ -73,9 +73,14 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className=" py-8 lg:py-16 bg-custom-menu">
       <div className="container mx-auto" data-aos="fade-up">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">Testimonials</h2>
-          <p className="text-xl mt-2">What our clients say about us</p>
+        <div className="text-left mb-12">
+          <div className="flex items-center mb-2">
+            <h2 className="text-3xl font-bold">Testimonials</h2>
+            <div className="w-16 h-0.5 bg-primary ml-4"></div>
+          </div>
+          <p className="text-xl mt-2 text-primary">
+            What our clients say about us
+          </p>
         </div>
 
         <Swiper
