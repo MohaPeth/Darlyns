@@ -25,7 +25,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <section className="bg-custom-bg py-8 lg:py-16 ">
+    <section id="gallery" className="bg-custom-bg py-8 lg:py-16 ">
       <div className="text-left mb-12 ml-8">
         <div className="flex items-center mb-2">
           <h2 className="text-3xl font-bold ml-8">Gallery</h2>

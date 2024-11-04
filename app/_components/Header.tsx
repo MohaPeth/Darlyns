@@ -1,86 +1,102 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Section from "./Section";
 import Link from "next/link";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <header className="bg-black bg-opacity-70 p-4">
       <Section>
         <div className="container mx-auto flex flex-row justify-between items-center font-sans">
-          <h1 className="text-3xl  ">
-            <Link href="/">&apos;THE DARLYN&apos;S&apos;</Link>
+          <h1 className="text-3xl">
+            <Link href="/">THE DARLYN&apos;S</Link>
           </h1>
-          <nav id="navbar" className="flex-grow">
-            <ul className="flex space-x-4 justify-center">
-              <li>
+
+          {/* Bouton menu hamburger pour petits écrans */}
+          <button
+            onClick={toggleMenu}
+            type="button"
+            aria-label="Toggle menu"
+            className="lg:hidden text-3xl text-white focus:outline-none"
+          >
+            {isOpen ? <FiX /> : <FiMenu />}
+          </button>
+
+          {/* Menu overlay pour petits écrans */}
+          <div
+            className={`fixed inset-0 bg-black bg-opacity-100 z-50 transform ${
+              isOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform duration-300 ease-in-out lg:hidden`}
+          >
+            <button
+              onClick={toggleMenu}
+              type="button"
+              aria-label="Close menu"
+              className="absolute top-4 right-4 text-white text-3xl focus:outline-none"
+            >
+              <FiX />
+            </button>
+            <nav className="flex flex-col items-center justify-center h-full space-y-6">
+              {[
+                { href: "/", label: "Home" },
+                { href: "#About", label: "About" },
+                { href: "#menu", label: "Menu" },
+                { href: "#specials", label: "Specials" },
+                { href: "#events", label: "Events" },
+                { href: "#chefs", label: "Chefs" },
+                { href: "#gallery", label: "Gallery" },
+                { href: "#contact", label: "Contact" },
+              ].map((link) => (
                 <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/home"
+                  key={link.href}
+                  href={link.href}
+                  className="text-2xl text-white hover:text-primary transition duration-300 ease-in-out"
+                  onClick={() => setIsOpen(false)} // Ferme le menu quand on clique sur un lien
                 >
-                  Home
+                  {link.label}
                 </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/about"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/menu"
-                >
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/specials"
-                >
-                  Specials
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/events"
-                >
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/chefs"
-                >
-                  Chefs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/gallery"
-                >
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-primary transition duration-300 ease-in-out"
-                  href="/contact"
-                >
-                  Contact
-                </Link>
-              </li>
+              ))}
+            </nav>
+          </div>
+
+          {/* Menu de navigation pour grands écrans */}
+          <nav
+            id="navbar"
+            className="hidden lg:flex flex-grow justify-center space-x-4"
+          >
+            <ul className="flex space-x-4">
+              {[
+                { href: "/", label: "Home" },
+                { href: "#about", label: "About" },
+                { href: "#menu", label: "Menu" },
+                { href: "#specials", label: "Specials" },
+                { href: "#events", label: "Events" },
+                { href: "#chefs", label: "Chefs" },
+                { href: "#gallery", label: "Gallery" },
+                { href: "#contact", label: "Contact" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-primary transition duration-300 ease-in-out"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
+
+          {/* Bouton de réservation */}
           <Link
             href="/book-a-table"
-            className="hidden lg:flex border border-primary text-white py-2 px-4 rounded-full hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            className="hidden lg:flex border border-primary text-white py-2 px-4 rounded-full hover:bg-primary transition duration-300 ease-in-out"
           >
             Book a table
           </Link>
