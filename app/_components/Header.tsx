@@ -15,7 +15,7 @@ const Header = () => {
       <Section>
         <div className="container mx-auto flex flex-row justify-between items-center font-sans">
           <h1 className="text-3xl  ">
-            <Link href="/">&apos;THE DARLYN&apos;S&apos;</Link>
+            <Link href="/">THE DARLYN&apos;S</Link>
           </h1>
 
           {/* Bouton menu hamburger pour petits écrans */}
