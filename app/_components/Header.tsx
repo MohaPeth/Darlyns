@@ -14,8 +14,8 @@ const Header = () => {
     <header className="bg-black bg-opacity-70 p-4">
       <Section>
         <div className="container mx-auto flex flex-row justify-between items-center font-sans">
-          <h1 className="text-3xl">
-            <Link href="/">THE DARLYN&apos;S</Link>
+          <h1 className="text-3xl  ">
+            <Link href="/">&apos;THE DARLYN&apos;S&apos;</Link>
           </h1>
 
           {/* Bouton menu hamburger pour petits écrans */}
